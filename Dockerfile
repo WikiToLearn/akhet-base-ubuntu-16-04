@@ -1,4 +1,4 @@
-FROM        ubuntu:trusty
+FROM        ubuntu:16.04
 
 MAINTAINER WikiToLearn akhet@wikitolearn.org
 
@@ -6,6 +6,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
 ENV DISPLAY :0
+
+ADD ./sources.list /etc/apt/sources.list
 
 RUN apt-get update && apt-get dist-upgrade --assume-yes --force-yes && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete
 RUN apt-get update && apt-get -y --force-yes install x11vnc && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete
