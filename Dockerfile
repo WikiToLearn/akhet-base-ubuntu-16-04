@@ -9,13 +9,13 @@ ENV DISPLAY :0
 
 ADD ./sources.list /etc/apt/sources.list
 
-RUN apt-get update && apt-get dist-upgrade --assume-yes --force-yes && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete
-RUN apt-get update && apt-get -y --force-yes install x11vnc && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete
-RUN apt-get update && apt-get -y --force-yes install python && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete
-RUN apt-get update && apt-get -y --force-yes install python-numpy && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete
-RUN apt-get update && apt-get -y --force-yes install xserver-xorg-video-dummy && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete
-RUN apt-get update && apt-get -y --force-yes install supervisor && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete
-RUN apt-get update && apt-get -y --force-yes install git && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete
+RUN apt-get update && apt-get dist-upgrade --assume-yes --force-yes && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
+RUN apt-get update && apt-get -y --force-yes install x11vnc && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
+RUN apt-get update && apt-get -y --force-yes install python && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
+RUN apt-get update && apt-get -y --force-yes install python-numpy && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
+RUN apt-get update && apt-get -y --force-yes install xserver-xorg-video-dummy && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
+RUN apt-get update && apt-get -y --force-yes install supervisor && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
+RUN apt-get update && apt-get -y --force-yes install git && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
 
 RUN git clone https://github.com/kanaka/websockify /websockify
 
