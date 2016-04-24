@@ -13,10 +13,10 @@ x11vnc -storepasswd $AKHETBASE_VNCPASS /root/.vnc/passwd
 
 Xorg +extension GLX +extension RANDR +extension RENDER  -config /etc/X11/xorg.conf :0 &
 
-if [[ "$AKHETBASE_USER_LABEL" != "" ]] ; then
+#if [[ "$AKHETBASE_USER_LABEL" != "" ]] ; then
 #    FIXE
 #    usermod -c "$AKHETBASE_USER_LABEL" user
-fi
+#fi
 
 for gid in $AKHETBASE_GIDs ; do
     getent group $gid || groupadd -g $gid g$gid
