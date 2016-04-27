@@ -19,15 +19,16 @@ RUN apt-get update && apt-get -y --force-yes install git && rm -f /var/cache/apt
 
 RUN git clone https://github.com/kanaka/websockify /websockify
 
-RUN mkdir /root/.vnc/
+RUN mkdir /var/run/akhet
+RUN mkdir /root/.vnc
 
 RUN useradd -m user -u 1000 -s /bin/bash
 
-ADD ./run.sh /run.sh
+ADD ./akhet-bootstrap.sh /usr/local/bin/akhet-bootstrap.sh
 ADD ./xorg.conf /etc/X11/xorg.conf
 
 EXPOSE 5900 6080
 
-CMD ["/run.sh"]
+CMD ["/usr/local/bin/akhet-bootstrap.sh"]
 
-LABEL virtualfactoryimage=true
+LABEL akhetimage=true
