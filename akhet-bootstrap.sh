@@ -46,7 +46,7 @@ usermod -l $AKHETBASE_USER user
 
 touch /var/run/akhet/user-setup
 
-/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+/usr/local/bin/supervisord -c /etc/supervisor/supervisord.conf
 touch /var/run/akhet/supervisor
 
 if [[ "$AKHETBASE_SHARED" == "1" ]] ; then

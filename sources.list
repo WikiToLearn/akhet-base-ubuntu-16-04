@@ -1,8 +1,8 @@
 # See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
 # newer versions of the distribution.
 
-deb http://mi.mirror.garr.it/ubuntu/ xenial main restricted
-deb-src http://mi.mirror.garr.it/ubuntu/ xenial main restricted
+deb http://mi.mirror.garr.it/ubuntu/ xenial main restricted multiverse
+deb-src http://mi.mirror.garr.it/ubuntu/ xenial main restricted multiverse
 
 ## Major bug fix updates produced after the final release of the
 ## distribution.
@@ -31,5 +31,5 @@ deb http://mi.mirror.garr.it/ubuntu/ xenial-security main restricted
 deb-src http://mi.mirror.garr.it/ubuntu/ xenial-security main restricted
 deb http://mi.mirror.garr.it/ubuntu/ xenial-security universe
 deb-src http://mi.mirror.garr.it/ubuntu/ xenial-security universe
-# deb http://mi.mirror.garr.it/ubuntu/ xenial-security multiverse
-# deb-src http://mi.mirror.garr.it/ubuntu/ xenial-security multiverse
+deb http://mi.mirror.garr.it/ubuntu/ xenial-security multiverse
+deb-src http://mi.mirror.garr.it/ubuntu/ xenial-security multiverse

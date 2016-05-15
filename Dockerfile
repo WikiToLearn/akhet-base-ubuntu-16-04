@@ -14,7 +14,8 @@ RUN apt-get update && apt-get -y --force-yes install x11vnc && rm -f /var/cache/
 RUN apt-get update && apt-get -y --force-yes install python && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
 RUN apt-get update && apt-get -y --force-yes install python-numpy && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
 RUN apt-get update && apt-get -y --force-yes install xserver-xorg-video-dummy && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
-RUN apt-get update && apt-get -y --force-yes install supervisor && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
+RUN pip install supervisor && mkdir /var/log/supervisor/
+ADD ./supervisord.conf /etc/supervisor/supervisord.conf
 RUN apt-get update && apt-get -y --force-yes install git && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
 RUN apt-get update && apt-get -y --force-yes install x11-xserver-utils && rm -f /var/cache/apt/archives/*deb && find /var/lib/apt/lists/ -type f -delete && find /var/log/ -type f -delete
 
