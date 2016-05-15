@@ -57,8 +57,8 @@ fi
 
 if [[ "$AKHETBASE_NOTIMEOUT" != "1" ]] ; then
     for i in $(seq 1 3) ; do
-        x11vnc -flag /var/run/akhet/vnc-server -rfbport 5900 -usepw -display :0 -shared -noxdamage -xrandr $SHARED -timeout 60 -ping 1 -repeat
+        x11vnc -flag /var/run/akhet/vnc-server -rfbport 5900 -usepw -display :0 -noxdamage -xrandr $SHARED -timeout 60 -ping 1 -repeat
     done
 else
-    x11vnc -flag /var/run/akhet/vnc-server -rfbport 5900 -usepw -display :0 -shared -noxdamage -xrandr $SHARED -forever -ping 1 -repeat
+    x11vnc -flag /var/run/akhet/vnc-server -rfbport 5900 -usepw -display :0 -noxdamage -xrandr $SHARED -forever -ping 1 -repeat
 fi
